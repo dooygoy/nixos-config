@@ -3,7 +3,7 @@
 
   inputs = {
     # Nixpkgs
-    nixpkgs.url = "github:nixos/nixpkgs";  # Use unstable channel instead of release
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";  # Use unstable channel instead of release
 
     # Home manager
     home-manager.url = "github:nix-community/home-manager"; 
