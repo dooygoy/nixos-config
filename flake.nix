@@ -13,7 +13,7 @@
     # hardware.url = "github:nixos/nixos-hardware"; 
 
     neovim-flake = {
-      url = "github:jordanisaa/neovim-flake";
+      url = "github:jordanisaacs/neovim-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
  
