@@ -137,7 +137,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget vscode ranger unzip unrar git neofetch htop cowsay cmatrix
+    wget vscode ranger unzip unrar git neofetch htop cowsay cmatrix gnome-tweaks
     python3Full nodePackages.typescript nodejs helix nerdfonts starship
     inputs.neovim-flake.packages.${pkgs.system}.default ripgrep nixpkgs-review 
   ];
