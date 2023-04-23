@@ -1,7 +1,12 @@
 # This is your system's configuration file.
 # Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
-
-{ inputs, lib, config, pkgs, ... }: {
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}: {
   # You can import other NixOS modules here
   imports = [
     # If you want to use modules from other flakes (such as nixos-hardware):
@@ -38,7 +43,7 @@
   nix = {
     # This will add each flake input as a registry
     # To make nix3 commands consistent with your flake
-    registry = lib.mapAttrs (_: value: { flake = value; }) inputs;
+    registry = lib.mapAttrs (_: value: {flake = value;}) inputs;
 
     # This will additionally add your inputs to the system's legacy channels
     # Making legacy nix commands consistent as well, awesome!
@@ -51,7 +56,6 @@
       auto-optimise-store = true;
     };
   };
-
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -126,7 +130,7 @@
   users.users.stablejoy = {
     isNormalUser = true;
     description = "domagoj miskovic";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
       firefox
       kate
@@ -137,9 +141,36 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget vscode ranger unzip unrar git neofetch htop cowsay cmatrix gnome.gnome-tweaks alacritty arc-theme gnome-themes-extra dracula-theme
-    python3Full nodePackages.typescript nodejs helix nerdfonts starship rPackages.vangogh
-    inputs.neovim-flake.packages.${pkgs.system}.default ripgrep nixpkgs-review 
+    wget
+    vscode
+    ranger
+    unzip
+    unrar
+    git
+    neofetch
+    htop
+    cowsay
+    cmatrix
+    gnome.gnome-tweaks
+    alacritty
+    arc-theme
+    gnome-themes-extra
+    dracula-theme
+    python3Full
+    nodePackages.typescript
+    nodejs
+    helix
+    nerdfonts
+    starship
+    rPackages.vangogh
+    inputs.neovim-flake.packages.${pkgs.system}.default
+    ripgrep
+    nixpkgs-review
+    flat-remix-gnome
+    layan-gtk-theme
+    zuki-themes
+    qogir-theme
+    juno-theme
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -160,7 +191,6 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
-
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.05";
