@@ -171,6 +171,8 @@
     zuki-themes
     qogir-theme
     juno-theme
+    nix-tree 
+    vlc
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
