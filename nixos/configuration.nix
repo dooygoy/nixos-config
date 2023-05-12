@@ -173,6 +173,7 @@
     juno-theme
     nix-tree 
     vlc
+    zoom-us
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
